@@ -1,6 +1,12 @@
 package rabitsAndFibb;
 
+/** Rabbit is the super class of all other rabbits
+*   @Author Kathryn Newbould
+*   @Version 1.0
+*/
+
 public abstract class Rabbit {
+
 	protected boolean breed = false;// can this rabbit breed
 	protected int age=0;		// how old is this rabbit
 	protected boolean dead=false;	// is it dead?
@@ -21,7 +27,11 @@ public abstract class Rabbit {
 	public int getID(){
 		return ID;
 	}
-	void timeStep(){		// timeStep incrememnts age by 1, calls deathChance() then checks rabbit states
+
+	/** timeStep increments age by one month, calls deathChance(), then checks if the rabbit is able to breed
+	*
+	*/
+	void timeStep(){		
 		age+=1;
 		deathChance();
 		if (age>=2 && !dead){

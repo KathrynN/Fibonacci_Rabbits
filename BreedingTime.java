@@ -2,10 +2,22 @@ package rabitsAndFibb;
 
 import java.util.ArrayList;
 
+/** BreedingTime is the class which groups together Rabbits, monitoring how many have died or been born
+*   @Author Kathryn Newbould
+*   @Version 1.0
+*/
+
 public class BreedingTime {
 	static int numOfRabbitsBorn;
 	static int numOfRabbitsDead;
-	
+
+	/** timeToBreed monitors how many rabbits are born through numOfRabbitsBorn
+	*   die, through numOfRabbitsDead
+	*   It iterates through an ArrayList of Rabbit a given number of times (time)
+	*   (stopping if all are dead) and time steps for each one.  
+	*   @param rab is an ArrayList of any subclass of rabbit
+	*   @param time is the number of timesteps to iterate over the ArrayList
+	*/
 	public static void timeToBreed(ArrayList<Rabbit> rab, int time){
 		numOfRabbitsBorn = 0;
 		numOfRabbitsDead = 0;
@@ -28,6 +40,12 @@ public class BreedingTime {
 			System.out.println("The rabbit hutch has " + rab.size() + " rabbit" + plural + " at time " + t + ".  " + numOfRabbitsDead + " rabbits have died." );
 		}
 	}
+
+    /**  breed loops through the ArrayList, and for each breedable rabbit, it adds a new rabbit to the ArrayList
+    *   it also removes dead rabbits from the ArrayList
+    *   and then returns this new, cleaned up list    *
+    *   @param rab - an ArrayList of any subclass of class Rabbit
+    */
 	
 	private static ArrayList<Rabbit> breed(ArrayList<Rabbit> rab){
 	/*
