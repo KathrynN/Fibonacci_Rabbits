@@ -1,6 +1,8 @@
 package rabitsAndFibb;
 
-/** RandomDyingRabbit has a chance on every timestep.
+/** RandomDyingRabbit has a chance to die on every timestep.
+*   @Author Kathryn Newbould
+*   @Version 1.0
 */
 public class RandomDyingRabbit extends Rabbit {
 	private double ageToDie;
