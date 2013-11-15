@@ -1,13 +1,15 @@
 package rabitsAndFibb;
 
+/** RandomDyingRabbit has a chance on every timestep.
+*/
 public class RandomDyingRabbit extends Rabbit {
-/* 
- *  rabbit is given a 1/2 chance of dying at every time step.
- */
-	private int ageToDie;
-	
+	private double ageToDie;
+
+	/** deathChance generates a random number between 0 and 2 
+	*   if that number is less than 0.5, the rabbit dies
+	*/
 	private void deathChance() {
-		ageToDie = (int) (Math.random() * 2);
+		ageToDie = Math.random() * 2;
 		// generate age to Die 
 		if (ageToDie < 0.5){
 			dead = true;
@@ -15,6 +17,11 @@ public class RandomDyingRabbit extends Rabbit {
 		}
 
 	}
+
+	/** timeStep increments the age by one month
+	*   checks if the rabbit is dead
+	*   if not, and the rabbit is old enough to breed, sets it to breed
+	*/
 	public void timeStep() {
 		age+=1;
 		deathChance();
@@ -22,6 +29,7 @@ public class RandomDyingRabbit extends Rabbit {
 			breed = true;
 		}
 	}
+	
 	public int diesAt(){return ageToDie;}
 	
 }
